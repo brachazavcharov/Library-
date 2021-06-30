@@ -1,0 +1,13 @@
+<div class="borrowers" *ngFor="let borrower of borrowerList">
+    <p>{{borrower.id}}</p>
+    <p>{{borrower.tz}}</p>
+    <p>{{borrower.firstName | longName }} {{borrower.lastName}}</p>
+    <a *ngIf="withMail(borrower)" href="mailto:{{borrower.mail}}?subject=Dear {{borrower.firstName}} ,Hello">
+        click here to send a message!
+    </a>
+    <div *ngIf="!withMail(borrower)&&borrower.phoneNumber!=0">telephone: {{borrower.phoneNumber}}</div>
+</div>
+<label>חדש</label>
+<input type="checkbox" [(ngModel)]="checkbox" />
+<app-borrower-form *ngIf="checkbox" (update)="setIfShow($event)"
+ [ifClear]="checkbox"></app-borrower-form>

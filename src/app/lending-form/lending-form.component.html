@@ -1,0 +1,11 @@
+<form [formGroup]="form">
+    <select formControlName="borrower" aria-placeholder="borrower" [(ngModel)]="borrowerSelect" >
+        <option *ngFor="let l of borrowers" [value]="l|json">{{l.firstName}} {{l.lastName}}</option>
+    </select>
+    <br />
+    <select formControlName="book" aria-placeholder="book" [(ngModel)]="bookSelect">
+        <option *ngFor="let b of booksList" [value]="b|json">{{b.title}}</option>
+    </select>
+    <br />
+    <input [disabled]="borrowerSelect==''||bookSelect==''" type="submit" value="save" (click)="add()">
+</form>

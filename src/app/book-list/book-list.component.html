@@ -1,0 +1,12 @@
+<br>
+<input type="text" [(ngModel)]="textSearch">
+<p *ngIf="isSearch()">the result for: {{textSearch}}</p>
+<app-category></app-category>
+<div class="books" *ngFor="let book of books" [class.book-miss-detais]="book.id==0||book.title==''||book.author==''">
+    <h1>{{book.id}}</h1>
+    <h2>{{book.title | titlecase}}</h2>
+    <p>{{book.author}}</p>
+    <a routerLink="/bookDetails/{{book.id}}" routerLinkActive="active">click here</a>
+</div>
+<p *ngIf="books.length==0" class="p">there are no books in the list</p>
+<p *ngIf="books.length!=0"class="p">there are {{books.length}} books</p>

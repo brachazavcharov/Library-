@@ -1,0 +1,7 @@
+<div *ngFor="let lending of lendingsList" [ngClass]="isFullOrEmpty(lending)">
+    <p>{{lending.Id}}</p>
+    <p>{{lending.borrowerLastName}} {{lending.borrowerFirstName}}</p>
+    <p>{{lending.landingDate | date:'EEEE, MMMM d, y'}}</p>
+    <p>{{lending.returnDate | date:'EEEE, MMMM d, y'}}</p>
+    <p *ngIf="calc(lending)">you must return this book as fast as you can!</p>
+</div>

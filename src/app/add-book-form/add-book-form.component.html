@@ -1,0 +1,15 @@
+<form #form="ngForm" (ngSubmit)="save()">
+    <input required type="text" name="title" placeholder="title" [(ngModel)]="b.title" #title="ngModel" />
+    <input required type="text" name="summary" placeholder="summary" [(ngModel)]="b.summary" #summary="ngModel" />
+    <input required type="text" name="author" placeholder="author" [(ngModel)]="b.author" #author="ngModel" />
+    <select name="ageCategory" [(ngModel)]="b.ageCategory" aria-placeholder="ageCategory" #ageCategory="ngModel"
+        required>
+        <option *ngFor="let c of categories" [value]="c.id" [style.backgroundColor]="c.color">
+            {{c.name}}
+        </option>
+    </select>
+    <input required type="text" name="pageCount" placeholder="pageCount" [(ngModel)]="b.pageCount"
+        #pageCount="ngModel" />
+    <input type="submit" [disabled]="!form.valid" />
+    <p *ngIf="!form.valid">you must enter all the fields!</p>
+</form>

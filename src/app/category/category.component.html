@@ -1,0 +1,7 @@
+<div *ngFor="let category of categoryList" routerLink="/toCategoryGroup/{{category.id}}" routerLinkActive="active"
+    [title]="category.description">
+    <app-category-formatter [category]="category"></app-category-formatter>
+</div>
+<div routerLink="/books" routerLinkActive="active">
+    all
+</div>

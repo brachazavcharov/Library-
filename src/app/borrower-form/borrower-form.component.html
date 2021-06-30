@@ -1,0 +1,41 @@
+<form [formGroup]="form" (ngSubmit)="add()">
+    <label>
+        tz:
+    </label>
+    <input type="text" formControlName="tz" [style.borderColor]="form.controls.tz.invalid&&
+    form.controls.tz.touched?
+        'red':'white'">
+    <br>
+    <label>
+        ageCategory:
+    </label>
+    <select formControlName="ageCategory">
+        <option *ngFor="let c of categories" [value]="c.id" [style.backgroundColor]="c.color">{{c.name}}</option>
+    </select>
+    <br>
+    <label>
+        firstName:
+    </label>
+    <input type="text" formControlName="firstName">
+    <p *ngIf="form.controls.firstName.invalid&&form.controls.firstName.dirty">
+        you must enter at least 2 letters not numbers!</p>
+    <br>
+    <label>
+        lastName:
+    </label>
+    <input type="text" formControlName="lastName">
+    <br>
+    <label>
+        phoneNumber:
+    </label>
+    <input type="text" formControlName="phoneNumber">
+    <br>
+    <label>
+        mail:
+    </label>
+    <input type="email" formControlName="mail">
+    <br>
+    <input type="submit" value="add">
+    <br>
+    <input type="button" value="reset" [disabled]="form.valid?'':'disabled'" (click)="reset()">
+</form>

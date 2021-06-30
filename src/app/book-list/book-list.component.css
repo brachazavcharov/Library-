@@ -1,0 +1,17 @@
+.book-miss-detais{
+    font-style: italic;
+    color: gray;
+}
+.books{
+    text-align: center;
+    border: black solid 2px;
+    width: 35vw;
+    height: 25vh;
+    margin-left: 31vw;
+}
+.p{
+    text-align: center;
+    font-weight: bold;
+    font-size: xx-large;
+    color: hotpink;
+}

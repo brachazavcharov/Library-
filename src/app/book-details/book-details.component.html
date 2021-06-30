@@ -1,0 +1,8 @@
+<div>
+    <h1>{{b.title}}</h1>
+    <h3>{{b.author}}</h3>
+    <h3>{{b.summary}}</h3>
+    <app-category-formatter [category]="getCategory(b.ageCategory)"></app-category-formatter>
+    <p *ngIf="b.pageCount>400">ספר עבה במיוחד</p>
+<p *ngIf="50>b.pageCount&&b.ageCategory!=1">הספר דק במיוחד</p>
+</div>
